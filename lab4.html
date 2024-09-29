@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>INST377 Lab 4</title>
+        <link rel="stylesheet" href="lab4.css">
+    </head>
+    <body>
+        <h1 id="bar">INST377 Lab 4</h1>
+
+    <div class="boxes">
+
+        <div class="box_one">
+            <form name="alert_me">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="name"/>
+            <input type="button" value="Alert Me!" class="name" onclick="alertme()">
+            </form>
+            <script type="text/javascript">
+            function alertme(){
+                var x= document.getElementById('name').value;
+                alert("Hi "+x+"!");
+        }
+        </script>
+        </div>
+
+        <div class="box_three">
+            <button onclick="changeColor()">Change Color</button>
+                <script type="text/javascript">
+                    function changeColor(){
+                        if(document.body.style.backgroundColor=='palevioletred') {
+                            document.body.style.backgroundColor='violet'
+                        } else{
+                            document.body.style.backgroundColor='palevioletred'
+                        }
+                    }
+                </script>
+        </div>
+
+        <div class="box_two">
+            <form name="vali">
+            <label for="validate_txt">Text Tester:</label>
+            <input type="text" id="validate_txt" class="vali"/>
+            <input type="button" value="Validate Text" onclick="return(Validate())">
+            </form> 
+
+            <script type="text/javascript">
+                function Validate(){
+                        var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                        if(validation.test(document.vali.validate_txt.value)){
+                        alert('nahr cleo');}
+                        else{return false}
+                    }
+            </script>
+        </div>
+
+        <div class="box_four">
+            <input type="button" value="Add Text" onclick="addText()">
+            <script type="text/javascript">
+                function addText(){
+                    document.getElementById("bar").textContent += "Add Text";
+                }
+            </script>
+        </div>
+
+    </div>
+    </body>
+
+</html>
